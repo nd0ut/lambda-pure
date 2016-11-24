@@ -151,7 +151,7 @@ prompt_pure_preprompt_render() {
 	preprompt+="%F{cyan}${prompt_pure_cmd_exec_time}%f"
 
 	# NodeJS version
-	local rpreprompt="%F{green}⬢ ${prompt_pure_node_version}%f"
+	#local rpreprompt="%F{green}⬢ ${prompt_pure_node_version}%f"
 
 	integer preprompt_left_length preprompt_right_length space_length
 	prompt_pure_string_length_to_var "${preprompt}" "preprompt_left_length"
@@ -301,7 +301,7 @@ prompt_pure_async_tasks() {
 		prompt_pure_current_working_tree="x${working_tree}"
 	fi
 
-	async_job "prompt_pure" prompt_pure_async_node "$PATH"
+	#async_job "prompt_pure" prompt_pure_async_node "$PATH"
 
 	# only perform tasks inside git working tree
 	[[ -n $working_tree ]] || return
@@ -341,10 +341,10 @@ prompt_pure_async_callback() {
 			prompt_pure_check_git_arrows
 			prompt_pure_preprompt_render
 			;;
-		prompt_pure_async_node)
-			prompt_pure_node_version=$output
-			prompt_pure_preprompt_render
-			;;
+		#prompt_pure_async_node)
+		#	prompt_pure_node_version=$output
+		#	prompt_pure_preprompt_render
+		#	;;
 	esac
 }
 
